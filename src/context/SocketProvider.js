@@ -12,7 +12,7 @@ export function SocketProvider({ id, children }) {
 
     const [socket, setSocket] = useState()
 
-    const HOST2 = process.env.HOST2 || "http://localhost:5000";
+    const HOST2 = process.env.HOST2;
 
     useEffect(() => {
         const newSocket = io(
