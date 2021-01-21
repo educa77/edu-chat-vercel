@@ -24,9 +24,9 @@ export default function OpenConversation() {
     }
 
     return (
-        <div className="d-flex flex-column w-100 p-3 bg-secondary">
+        <div className="d-flex flex-column w-100 p-3 ">
             <div className="d-flex overflow-auto mw-90">
-                <div className="d-flex flex-column align-items-start justify-content-end px-3">
+                <div className="d-flex flex-column align-items-start justify-content-end px-3 bg-secondary">
                     {selectedConversation.messages.map((message, index) => {
                         const lastMessage = selectedConversation.messages.length - 1 === index;
                         return (
