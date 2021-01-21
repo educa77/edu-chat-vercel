@@ -20,9 +20,9 @@ export function SocketProvider({ id, children }) {
             {
                 query: { id },
                 withCredentials: true,
-                // extraHeaders: {
-                // "my-custom-header": "abcd"
-                // }
+                extraHeaders: {
+                "my-custom-header": "abcd"
+                }
             }
         )
         setSocket(newSocket)
