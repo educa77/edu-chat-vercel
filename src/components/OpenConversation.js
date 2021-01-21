@@ -22,7 +22,7 @@ export default function OpenConversation() {
         );
         setText('');
     }
-
+    console.log(sendMessage)
 
     return (
         <div className="d-flex flex-column flex-grow-1">
