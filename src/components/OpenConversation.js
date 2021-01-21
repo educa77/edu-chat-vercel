@@ -64,7 +64,7 @@ export default function OpenConversation() {
                             required
                             value={text}
                             onChange={e => setText(e.target.value)}
-                            onkeypress={runScript(e.target.value)}
+                            onkeypress={e => runScript(e.target.value)}
                             style={{ height: '75px', resize: 'none' }}
                         />
                         <InputGroup.Append>
