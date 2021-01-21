@@ -11,8 +11,8 @@ export function useSocket() {
 export function SocketProvider({ id, children }) {
 
     const [socket, setSocket] = useState()
-
-   const HOST = "https://edu-chat-heroku.herokuapp.com/socket.io/?EIO=4&transport=websocket";
+    
+   const HOST = "https://edu-chat-heroku.herokuapp.com/socket.io/?transport=polling";
 // const HOST = "ws://edu-chat-heroku.herokuapp.com/socket.io/?EIO=4&transport=websocket"
     useEffect(() => {
         const newSocket = io(
@@ -29,6 +29,8 @@ export function SocketProvider({ id, children }) {
 
         return () => newSocket.close()
     }, [id, HOST])
+
+    console.log(socket)
     
     return (
         <SocketContext.Provider value={socket}>
