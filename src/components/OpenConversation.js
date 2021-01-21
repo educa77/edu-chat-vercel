@@ -22,12 +22,6 @@ export default function OpenConversation() {
         );
         setText('');
     }
-    function onKeyUp(e) {
-        e.preventDefault();
-        if (e.charCode === 13) {
-            handleSubmit();
-        }
-    }
 
     return (
         <div className="d-flex flex-column flex-grow-1">
@@ -61,7 +55,11 @@ export default function OpenConversation() {
                             value={text}
                             onChange={e => setText(e.target.value)}
                             style={{ height: '75px', resize: 'none' }}
-                            onKeyPress={e => onKeyUp(e)}
+                            onKeyPress={event => {
+                            if (event.key === "Enter") {
+                                handleSubmit(event)
+                            }
+                            }}
                         />
                         <InputGroup.Append>
                         <Button type="submit">Send</Button>
