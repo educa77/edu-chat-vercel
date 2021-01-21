@@ -13,7 +13,7 @@ export function SocketProvider({ id, children }) {
     const [socket, setSocket] = useState()
     
 //   const HOST = "https://edu-chat-heroku.herokuapp.com/socket.io/?transport=polling";
-const HOST = "https://edu-chat-heroku.herokuapp.com/socket.io/";  
+const HOST = "https://edu-chat-heroku.herokuapp.com/";  
 // const HOST = "ws://edu-chat-heroku.herokuapp.com/socket.io/?EIO=4&transport=websocket"
     useEffect(() => {
         const newSocket = io(
