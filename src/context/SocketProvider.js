@@ -19,7 +19,7 @@ export function SocketProvider({ id, children }) {
              HOST2,
             {
                 query: { id },
-                withCredentials: false,
+                withCredentials: true,
                 extraHeaders: {
                 "my-custom-header": "abcd"
                 }
