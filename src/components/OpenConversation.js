@@ -22,16 +22,12 @@ export default function OpenConversation() {
         );
         setText('');
     }
-    function runScript(e) {
-    //See notes about 'which' and 'key'
+    function onKeyUp(e) {
         e.preventDefault();
-    if (e.keyCode === 13) {
-        sendMessage(selectedConversation.recipients.map(r => r.id),
-        text
-        );
-        setText('');
+        if (e.charCode === 13) {
+            handleSubmit();
+        }
     }
-}
 
     return (
         <div className="d-flex flex-column flex-grow-1">
@@ -64,8 +60,8 @@ export default function OpenConversation() {
                             required
                             value={text}
                             onChange={e => setText(e.target.value)}
-                            onkeypress={e => runScript(e.target.value)}
                             style={{ height: '75px', resize: 'none' }}
+                            onKeyPress={e => onKeyUp(e)}
                         />
                         <InputGroup.Append>
                         <Button type="submit">Send</Button>
