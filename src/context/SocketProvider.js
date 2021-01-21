@@ -16,7 +16,7 @@ export function SocketProvider({ id, children }) {
 
     useEffect(() => {
         const newSocket = io(
-             HOST2,
+             HOST,
             {
                 query: { id },
                 withCredentials: true,
