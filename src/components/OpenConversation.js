@@ -22,7 +22,16 @@ export default function OpenConversation() {
         );
         setText('');
     }
-    console.log(sendMessage)
+    function runScript(e) {
+    //See notes about 'which' and 'key'
+        e.preventDefault();
+    if (e.keyCode === 13) {
+        sendMessage(selectedConversation.recipients.map(r => r.id),
+        text
+        );
+        setText('');
+    }
+}
 
     return (
         <div className="d-flex flex-column flex-grow-1">
@@ -47,7 +56,7 @@ export default function OpenConversation() {
                     })}
                 </div>
             </div>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} >
                 <Form.Group className="m-2">
                     <InputGroup>
                         <Form.Control
@@ -55,6 +64,7 @@ export default function OpenConversation() {
                             required
                             value={text}
                             onChange={e => setText(e.target.value)}
+                            onkeypress={runScript(e.target.value)}
                             style={{ height: '75px', resize: 'none' }}
                         />
                         <InputGroup.Append>
