@@ -24,7 +24,7 @@ export default function OpenConversation() {
     }
 
     return (
-        <div className="d-flex flex-column w-100 p-3">
+        <div className="d-flex flex-column w-100 p-3 bg-red">
             <div className="d-flex overflow-auto bg-secondary mw-90">
                 <div className="d-flex flex-column align-items-start justify-content-end px-3">
                     {selectedConversation.messages.map((message, index) => {
